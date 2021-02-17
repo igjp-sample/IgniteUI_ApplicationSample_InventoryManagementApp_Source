@@ -1,0 +1,23 @@
+@import '../layout-config';
+
+:host {
+  display: flex;
+}
+
+#site-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  flex: 1;
+}
+
+@include b(main-content) {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: $page-gap;
+  height: 100%;
+}
+

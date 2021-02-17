@@ -1,0 +1,63 @@
+@import '../../layout-config';
+
+:host {
+    max-width: $drawer-width;
+}
+
+// SVG Logo colors.
+.a {
+    fill: none;
+}
+
+.b {
+    fill: $logo-graphic-color;
+}
+
+.c {
+    fill: $logo-text-color;
+}
+
+@include b(fab-toggle) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: $grid-gap;
+
+    @include e(text) {
+        font-size: rem(12px);
+        margin-right: rem(8px);
+        color: var(--igx-navdrawer-item-header-text-color);
+        cursor: pointer;
+    }
+
+    ::ng-deep {
+        .igx-button--icon {
+            color: var(--igx-navdrawer-item-icon-color);
+        }
+    }
+}
+
+@include b(logo) {
+    min-height: 56px;
+    margin-top: 0 !important;
+    cursor: default;
+
+    &:hover,
+    &:focus {
+        background: transparent;
+    }
+
+    @include e(image) {
+        width: rem(130px);
+        height: rem(38px);
+    }
+
+    @include e(image, $m: mobile) {
+        width: rem(36px);
+        height: rem(36px);
+    }
+}
